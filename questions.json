@@ -1,0 +1,452 @@
+{
+ "emailDomain": "cmi.ac.in",
+ "themes": [
+  {
+   "id": "A",
+   "name": "Emotional behaviour"
+  },
+  {
+   "id": "B",
+   "name": "Love and affection"
+  },
+  {
+   "id": "C",
+   "name": "Dating style and communication"
+  },
+  {
+   "id": "D",
+   "name": "Conflict and feedback"
+  },
+  {
+   "id": "E",
+   "name": "Social life and lifestyle"
+  },
+  {
+   "id": "F",
+   "name": "Humor and mind"
+  },
+  {
+   "id": "G",
+   "name": "Ambition and values"
+  }
+ ],
+ "questions": [
+  {
+   "id": "intro",
+   "type": "intro",
+   "text": "Look around!",
+   "paras": [
+    "Right now, you’re surrounded by some of the most interesting and talented people you’ll ever meet—future innovators, leaders, and yes, maybe your future life partner.",
+    "But let’s be honest—time flies. Before you know it, garba will be over, graduation will hit and everyone will head off on their own paths.",
+    "That’s where Garba Finder comes in.",
+    "Think of us as your ultimate matchmaking wingperson, powered by science, ML and algorithms.",
+    "Answer our carefully crafted questionnaire, and we’ll use research-backed matching techniques to match you with someone who actually gets you. Whether it’s for an unforgettable garba night… or something that lasts way beyond it."
+   ],
+   "sections": [
+    {
+     "h": "Privacy Policy",
+     "paras": [
+      "Hi, Arjun here.",
+      "I am not gonna sell your data. I am probably not even gonna look at it. Once we close the form, I will just export the csv from Supabase which will be then put into the matchmaking backend which will return csv of matches which will go to a SMTP server (hosted on my computer) and you'll all get the mail.",
+      "And then I will delete all data.",
+      "You can see the code for yourself here: https://github.com/TheArjunAgarwal/open-pact",
+      "Enjoy!"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "name",
+   "type": "name",
+   "text": "First things first. What's your name?"
+  },
+  {
+   "id": "email",
+   "type": "email",
+   "text": "CMI email?",
+   "sub": "Should end in \"cmi.ac.in\". We'll send a code here at the end."
+  },
+  {
+   "id": "gender",
+   "type": "single",
+   "text": "How do you identify?",
+   "options": [
+    "Man",
+    "Woman",
+    "Non-binary",
+    "Other"
+   ]
+  },
+  {
+   "id": "interested_in",
+   "type": "multi",
+   "text": "I'm interested in matching with people who identify as…",
+   "sub": "Pick all that apply.",
+   "options": [
+    "Men",
+    "Women",
+    "Non-binary people",
+    "Other"
+   ]
+  },
+  {
+   "id": "age",
+   "type": "number",
+   "text": "How old are you?",
+   "min": 16,
+   "max": 36,
+   "sub": "Between 16 and 36."
+  },
+  {
+   "id": "age_range",
+   "type": "range",
+   "text": "I'm comfortable matching with people aged…",
+   "min": 16,
+   "max": 36,
+   "sub": "Between 16 and 36."
+  },
+  {
+   "id": "smoking",
+   "type": "dealbreaker",
+   "text": "Smoking",
+   "mine": "I smoke",
+   "theirs": "My partner smoking is"
+  },
+  {
+   "id": "alcohol",
+   "type": "dealbreaker",
+   "text": "Alcohol",
+   "mine": "I drink",
+   "theirs": "My partner drinking is"
+  },
+  {
+   "id": "drugs",
+   "type": "dealbreaker",
+   "text": "Recreational drugs",
+   "mine": "I use them",
+   "theirs": "My partner using them is"
+  },
+  {
+   "id": "A1",
+   "theme": "A",
+   "type": "dual",
+   "text": "When something goes wrong in your life (a bad exam, a failure, a fight with a friend), how much emotional support are you looking for?",
+   "yc": "How much support you'd expect from them",
+   "ic": "How much support you'd give them",
+   "lo": "I'd rather handle it alone",
+   "hi": "I'd expect them to help me sort my life out",
+   "ilo": "I'd let them handle it alone",
+   "ihi": "I'd be involved and help"
+  },
+  {
+   "id": "A2",
+   "theme": "A",
+   "type": "dual",
+   "text": "When your partner is upset, do you offer solutions or just listen?",
+   "yc": "What you do",
+   "ic": "What you want from them",
+   "lo": "Just listen",
+   "hi": "Go straight to fixing it"
+  },
+  {
+   "id": "A3",
+   "theme": "A",
+   "type": "scale",
+   "text": "How easily would you share personal struggles and insecurities with your partner?",
+   "lo": "I keep them to myself",
+   "hi": "I share them openly"
+  },
+  {
+   "id": "A4",
+   "theme": "A",
+   "type": "scale",
+   "text": "When something is out of your control, how much does it still affect you?",
+   "lo": "I let it go easily",
+   "hi": "I can't stop thinking about it"
+  },
+  {
+   "id": "A5",
+   "theme": "A",
+   "type": "scale",
+   "text": "When your partner spends a lot of time with their own friends, how do you feel?",
+   "lo": "Uneasy or left out",
+   "hi": "Completely fine"
+  },
+  {
+   "id": "B1",
+   "theme": "B",
+   "type": "dual",
+   "text": "How comfortable are you with hugging and holding hands in public?",
+   "yc": "Your comfort",
+   "ic": "What you expect from them",
+   "lo": "Prefer none",
+   "hi": "Very comfortable"
+  },
+  {
+   "id": "B2",
+   "theme": "B",
+   "type": "dual",
+   "text": "How often would you tell your partner what you like about them?",
+   "yc": "How often you would",
+   "ic": "How often you want to hear it",
+   "lo": "Rarely",
+   "hi": "Often"
+  },
+  {
+   "id": "B3",
+   "theme": "B",
+   "type": "dual",
+   "text": "How much do you show care through thoughtful gifts (a small surprise that shows you were listening)?",
+   "yc": "How much you do",
+   "ic": "How much you want them to",
+   "lo": "Hardly ever",
+   "hi": "One of my main ways of showing love"
+  },
+  {
+   "id": "B4",
+   "theme": "B",
+   "type": "dual",
+   "text": "How much do you make your partner your top priority for free time and attention?",
+   "yc": "How much you would",
+   "ic": "How much you want to be their top priority",
+   "lo": "I keep a full life of my own",
+   "hi": "They come first"
+  },
+  {
+   "id": "B5",
+   "theme": "B",
+   "type": "dual",
+   "text": "How often do you help your partner (notes, a task, an errand) without being asked?",
+   "yc": "How often you do",
+   "ic": "How often you want them to",
+   "lo": "Only when asked",
+   "hi": "Very often. I notice and just do it"
+  },
+  {
+   "id": "B6",
+   "theme": "B",
+   "type": "scale",
+   "text": "When you spend time with your partner, do you prefer a planned activity or unstructured time?",
+   "lo": "Unstructured (a walk, just hanging out)",
+   "hi": "A planned activity (movie, game, trip)"
+  },
+  {
+   "id": "C1",
+   "theme": "C",
+   "type": "dual",
+   "text": "How often do you like to message your partner?",
+   "yc": "How often you do",
+   "ic": "How often you want them to",
+   "lo": "A few times a week",
+   "hi": "All day"
+  },
+  {
+   "id": "C2",
+   "theme": "C",
+   "type": "dual",
+   "text": "How much do you take the first step in making plans?",
+   "yc": "How much you do",
+   "ic": "How much you want them to",
+   "lo": "Very little",
+   "hi": "I always do"
+  },
+  {
+   "id": "C3",
+   "theme": "C",
+   "type": "dual",
+   "text": "If someone shows interest and you aren't interested, what do you do?",
+   "yc": "What you do",
+   "ic": "How you want to be turned down",
+   "lo": "Tell them clearly",
+   "hi": "Let the conversation fade out"
+  },
+  {
+   "id": "C4",
+   "theme": "C",
+   "type": "scale",
+   "text": "On a first date, how do you feel about splitting the bill?",
+   "lo": "The inviter should pay (4 = it depends)",
+   "hi": "Always split evenly"
+  },
+  {
+   "id": "D1",
+   "theme": "D",
+   "type": "dual",
+   "text": "How bluntly do you give critical feedback?",
+   "yc": "How you give it",
+   "ic": "How you want to hear it",
+   "lo": "Very gently",
+   "hi": "Very bluntly"
+  },
+  {
+   "id": "D2",
+   "theme": "D",
+   "type": "scale",
+   "text": "If something about your partner bothers you, when do you bring it up?",
+   "lo": "Rarely or never",
+   "hi": "Right away"
+  },
+  {
+   "id": "D3",
+   "theme": "D",
+   "type": "dual",
+   "text": "After a disagreement where you were partly at fault, how soon do you say sorry?",
+   "yc": "How soon you do",
+   "ic": "How soon you want them to",
+   "lo": "I wait until things cool down",
+   "hi": "Right away"
+  },
+  {
+   "id": "D4",
+   "theme": "D",
+   "type": "scale",
+   "text": "After someone hurts you, how long does it take you to let it go?",
+   "lo": "I move on quickly",
+   "hi": "It stays with me a long time"
+  },
+  {
+   "id": "D5",
+   "theme": "D",
+   "type": "scale",
+   "text": "When your partner points out something personal about you (a habit, how you speak), how do you usually feel?",
+   "lo": "It hurts and I think about it for a long time",
+   "hi": "I consider if they have a point and move on"
+  },
+  {
+   "id": "E1",
+   "theme": "E",
+   "type": "scale",
+   "text": "How much personal time do you need each week, even when things are going great?",
+   "lo": "Almost none",
+   "hi": "A lot"
+  },
+  {
+   "id": "E2",
+   "theme": "E",
+   "type": "scale",
+   "text": "How do you prefer to spend a free evening?",
+   "lo": "Quiet night in",
+   "hi": "Party, concert or festival"
+  },
+  {
+   "id": "E3",
+   "theme": "E",
+   "type": "scale",
+   "text": "At a party, how much do you go out of your way to meet people you don't know?",
+   "lo": "I stay with people I know",
+   "hi": "I actively seek out new people"
+  },
+  {
+   "id": "E4",
+   "theme": "E",
+   "type": "scale",
+   "text": "When are you most productive?",
+   "lo": "Crack of dawn",
+   "hi": "Burning the midnight oil"
+  },
+  {
+   "id": "E5",
+   "theme": "E",
+   "type": "scale",
+   "text": "How do you handle weekend plans?",
+   "lo": "Plan everything in advance",
+   "hi": "Spontaneously"
+  },
+  {
+   "id": "E6",
+   "theme": "E",
+   "type": "scale",
+   "text": "How much do you enjoy thrill-seeking (roller coasters, daring challenges)?",
+   "lo": "Avoid it completely",
+   "hi": "Seek it out"
+  },
+  {
+   "id": "E7",
+   "theme": "E",
+   "type": "scale",
+   "text": "How tidy do you keep your room or space?",
+   "lo": "Mess is fine with me",
+   "hi": "Everything has its place"
+  },
+  {
+   "id": "E8",
+   "theme": "E",
+   "type": "scale",
+   "text": "How do you feel about being on time?",
+   "lo": "Time is just a number",
+   "hi": "Time is limited. Never waste others' time"
+  },
+  {
+   "id": "F1",
+   "theme": "F",
+   "type": "scale",
+   "text": "How often do you use dark humor in everyday conversation?",
+   "lo": "Never",
+   "hi": "Constantly"
+  },
+  {
+   "id": "F2",
+   "theme": "F",
+   "type": "scale",
+   "text": "Do you enjoy being teased or pranked by a partner?",
+   "lo": "Annoyed af",
+   "hi": "It's my love language"
+  },
+  {
+   "id": "F3",
+   "theme": "F",
+   "type": "scale",
+   "text": "How much do you enjoy debating ideas with your partner when you disagree?",
+   "lo": "I avoid it",
+   "hi": "Love it"
+  },
+  {
+   "id": "G1",
+   "theme": "G",
+   "type": "scale",
+   "text": "In a busy week, how many of your other activities (friends, hobbies, sleep, social events) do you give up for studies or career?",
+   "lo": "None, I keep everything",
+   "hi": "Almost all of them"
+  },
+  {
+   "id": "G2",
+   "theme": "G",
+   "type": "scale",
+   "text": "How far ahead do you plan your future?",
+   "lo": "I take it as it comes",
+   "hi": "My life is planned out"
+  },
+  {
+   "id": "G3",
+   "theme": "G",
+   "type": "scale",
+   "text": "When choosing a path, how do you weigh financial stability against passion?",
+   "lo": "Follow passion",
+   "hi": "Stability first"
+  },
+  {
+   "id": "G4",
+   "theme": "G",
+   "type": "scale",
+   "text": "How fulfilling would it be to spend your life doing good for others even if nobody ever knew?",
+   "lo": "I'd want some recognition",
+   "hi": "I'd be happy doing it"
+  },
+  {
+   "id": "G5",
+   "theme": "G",
+   "type": "scale",
+   "text": "How effective is public protest as a way to bring about change in a country?",
+   "lo": "Mostly ineffective or harmful",
+   "hi": "Essential and effective"
+  },
+  {
+   "id": "G6",
+   "theme": "G",
+   "type": "scale",
+   "text": "When making big life decisions (where to live, which job), how much does staying close to family matter?",
+   "lo": "It doesn't affect my decision",
+   "hi": "One of the main factors"
+  }
+ ]
+}

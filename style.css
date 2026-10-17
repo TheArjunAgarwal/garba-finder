@@ -1,0 +1,59 @@
+:root{--bg:#000;--fg:#fff;--mut:#8b8b8b;--line:#333;--acc:#c8693a;--accbg:#1a0e08;--you:#e0a06b;--them:#7fb0ff;--r:18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:Inter,system-ui,sans-serif}
+#bar{position:fixed;top:0;left:0;right:0;height:3px;background:#111}
+#bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
+#stage{min-height:100%;display:flex;align-items:center;justify-content:center;padding:48px 20px 90px}
+.q{width:100%;max-width:640px}
+.tag{color:var(--mut);font-size:.9rem;margin:0 0 10px}
+h1{font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.2;margin:0 0 10px;font-weight:700}
+.sub{color:#bdbdbd;margin:0 0 26px;font-size:1.05rem}
+h1+.row,h1+.grp,h1+.scale,h1+.pills{margin-top:26px}
+.row{display:flex;gap:12px}.row>*{flex:1}
+input{width:100%;background:transparent;border:2px solid var(--line);border-radius:var(--r);color:var(--fg);font:inherit;font-size:1.1rem;padding:16px 18px;outline:none}
+input:focus{border-color:var(--acc)}
+.pills{display:flex;flex-wrap:wrap;gap:10px}
+.pill{background:var(--accbg);border:2px solid #5a2d1a;color:#ddd;border-radius:14px;font:inherit;font-size:1.05rem;padding:12px 20px;cursor:pointer}
+.pill:hover{border-color:var(--acc)}
+.pill.on{background:var(--acc);border-color:var(--acc);color:#000;font-weight:600}
+.grp{margin-bottom:22px}
+.lab{font-weight:600;margin:0 0 10px}
+.dual .blk{border-left:4px solid var(--you);padding:2px 0 2px 16px;margin-bottom:28px}
+.dual .blk.them{border-color:var(--them)}
+.who{font-weight:700;margin:0}.you .who,.blk:not(.them) .who{color:var(--you)}.them .who{color:var(--them)}
+.cap{color:var(--mut);margin:2px 0 12px;font-size:.95rem}
+.scale{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.scale button{aspect-ratio:1;max-height:68px;background:#000;border:2px solid var(--line);border-radius:var(--r);color:var(--fg);font:inherit;font-size:1.15rem;font-weight:600;cursor:pointer}
+.scale button:hover{border-color:var(--mut)}
+.scale button.on{background:var(--acc);border-color:var(--acc);color:#000}
+.blk.them .scale button.on{background:var(--them);border-color:var(--them)}
+.ends{display:flex;justify-content:space-between;gap:16px;color:var(--mut);font-size:.9rem;margin-top:8px}
+.ends span:last-child{text-align:right}
+.rk{display:flex;flex-direction:column;gap:10px}
+.rk .pill{display:flex;gap:14px;align-items:center;text-align:left}
+.rk b{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;border:2px solid #5a2d1a;font-size:.9rem}
+.rk .on b{border-color:#000}
+.act{display:flex;justify-content:flex-end;align-items:center;gap:14px;margin-top:24px}
+.btn{background:#fff;color:#000;border:0;border-radius:999px;font:inherit;font-weight:700;letter-spacing:.08em;padding:16px 30px;cursor:pointer}
+.btn:disabled{background:#303030;color:#000;cursor:not-allowed}
+.lnk{background:none;border:0;color:var(--mut);font:inherit;cursor:pointer;text-decoration:underline}
+.err{color:#ff7a6b;margin:12px 0 0;min-height:1.2em}
+#nav{position:fixed;right:24px;bottom:24px;display:flex;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+#nav button{background:#000;color:var(--fg);border:0;width:46px;height:42px;font-size:1.3rem;cursor:pointer}
+#nav button+button{border-left:1px solid var(--line)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--fg);outline-offset:2px}
+@media(max-width:480px){.row{flex-direction:column}.scale{gap:5px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.q.fwd{animation:in-up .45s cubic-bezier(.22,.8,.3,1)}
+.q.bk{animation:in-down .45s cubic-bezier(.22,.8,.3,1)}
+@keyframes in-up{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes in-down{from{opacity:0;transform:translateY(-36px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.q.fwd,.q.bk{animation:none}html{scroll-behavior:auto}}
+
+.intro{margin-top:18px}
+.intro p{color:#d2d2d2;line-height:1.6;margin:0 0 14px;max-width:62ch}
+.intro a{color:var(--you)}
+.priv{margin-top:26px;border-left:4px solid var(--acc);padding-left:18px}
+.priv h2{font-size:1.1rem;margin:0 0 10px}
